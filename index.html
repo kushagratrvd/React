@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Projects Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+    }
+    .header {
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: #1e1e1e;
+      border: 1px solid #333;
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      background-color: #2a2a2a;
+    }
+    .card h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.5rem;
+      color: #3ea6ff;
+    }
+    .card p {
+      margin: 0;
+      color: #aaa;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>React Projects Dashboard</h1>
+    <p>A collection of mini React applications</p>
+  </div>
+  
+  <div class="grid">
+    <a href="./Meals%20Listing/index.html" class="card">
+      <h2>Meals Listing</h2>
+      <p>Browse and explore different meals and recipes.</p>
+    </a>
+    
+    <a href="./Random%20Cat/index.html" class="card">
+      <h2>Random Cat</h2>
+      <p>Get random cute cat profiles and pictures.</p>
+    </a>
+    
+    <a href="./Random%20Jokes/index.html" class="card">
+      <h2>Random Jokes</h2>
+      <p>View random jokes with a neo-brutalism design.</p>
+    </a>
+    
+    <a href="./Random%20Users/index.html" class="card">
+      <h2>Random Users</h2>
+      <p>Generate random user profiles with details.</p>
+    </a>
+    
+    <a href="./Youtube%20Videos/index.html" class="card">
+      <h2>YouTube Clone</h2>
+      <p>A YouTube video gallery clone UI.</p>
+    </a>
+  </div>
+</body>
+</html>
