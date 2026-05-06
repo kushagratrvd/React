@@ -1,0 +1,184 @@
+:root {
+  --bg-main: #0f0e17;
+  --headline: #fffffe;
+  --paragraph: #a7a9be;
+  --btn-bg: #ff8906;
+  --btn-text: #fffffe;
+  --card-bg: #0f0e17; 
+  --secondary: #f25f4c;
+  --border-soft: black; 
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--paragraph);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title {
+  color: var(--headline);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Custom Cat Card Layout */
+.card-grid {
+  display: flex;
+  justify-content: center; /* Center the single cat card */
+  margin-bottom: 3rem;
+}
+
+.card {
+  max-width: 500px;
+  width: 100%;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 24, 88, 0.08); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 24, 88, 0.1); 
+}
+
+.card-image-container {
+  width: 100%;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.cat-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed from 'cover' to 'contain' so nothing is cropped */
+  display: block;
+}
+
+.card-header {
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  border-bottom: none;
+}
+
+.card-header h3 {
+  font-size: 1.8rem;
+  color: var(--headline);
+  margin: 0;
+  font-weight: 800;
+}
+
+.card-body {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background-color: var(--secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--paragraph);
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-weight: 700;
+  color: var(--headline);
+  font-size: 1rem;
+}
+
+.info-section {
+  margin-bottom: 1.25rem;
+}
+
+.info-section strong {
+  display: block;
+  color: var(--headline);
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.temperament {
+  font-style: italic;
+  color: var(--paragraph);
+  margin-top: 0;
+}
+
+.description {
+  line-height: 1.6;
+  margin-top: 0;
+  color: var(--paragraph);
+}
+
+.wiki-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--headline);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--btn-bg);
+}
+
+.wiki-link:hover {
+  filter: brightness(1.2);
+}
+
+/* Smooth Button Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
