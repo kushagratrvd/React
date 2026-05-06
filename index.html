@@ -4,84 +4,167 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>React Projects Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #070919;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --accent: #00d2ff;
+      --accent-secondary: #3a7bd5;
+      --text-main: #ffffff;
+      --text-muted: #8b949e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(58, 123, 213, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(0, 210, 255, 0.15), transparent 25%);
     }
+
     .header {
-      padding: 2rem;
+      padding: 4rem 2rem 3rem;
       text-align: center;
-      border-bottom: 1px solid #333;
+      position: relative;
     }
+
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 150px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--accent), var(--accent-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -1px;
+    }
+
+    .header p {
+      margin: 1rem 0 0 0;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-      padding: 2rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
+
     .card {
       display: flex;
       flex-direction: column;
-      background-color: #1e1e1e;
-      border: 1px solid #333;
-      border-radius: 12px;
-      padding: 20px;
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
       text-decoration: none;
-      color: #fff;
-      transition: transform 0.2s, background-color 0.2s;
+      color: var(--text-main);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+      overflow: hidden;
     }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
     .card:hover {
-      transform: translateY(-4px);
-      background-color: #2a2a2a;
+      transform: translateY(-8px);
+      border-color: rgba(0, 210, 255, 0.4);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 210, 255, 0.15);
     }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
     .card h2 {
-      margin: 0 0 10px 0;
-      font-size: 1.5rem;
-      color: #3ea6ff;
+      margin: 0 0 12px 0;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
+
     .card p {
       margin: 0;
-      color: #aaa;
-      line-height: 1.5;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1>React Projects Dashboard</h1>
-    <p>A collection of mini React applications</p>
+    <h1>React Workspace</h1>
+    <p>A modern collection of mini React applications</p>
   </div>
   
   <div class="grid">
     <a href="./Meals%20Listing/index.html" class="card">
-      <h2>Meals Listing</h2>
-      <p>Browse and explore different meals and recipes.</p>
+      <h2>🍳 Meals Listing</h2>
+      <p>Browse and explore different meals and recipes dynamically.</p>
     </a>
     
     <a href="./Random%20Cat/index.html" class="card">
-      <h2>Random Cat</h2>
-      <p>Get random cute cat profiles and pictures.</p>
+      <h2>🐱 Random Cat</h2>
+      <p>Get random cute cat profiles, pictures, and facts via API.</p>
     </a>
     
     <a href="./Random%20Jokes/index.html" class="card">
-      <h2>Random Jokes</h2>
-      <p>View random jokes with a neo-brutalism design.</p>
+      <h2>😂 Random Jokes</h2>
+      <p>View random developer jokes with a cool neo-brutalism design style.</p>
     </a>
     
     <a href="./Random%20Users/index.html" class="card">
-      <h2>Random Users</h2>
-      <p>Generate random user profiles with details.</p>
+      <h2>👥 Random Users</h2>
+      <p>Generate clean random user profiles containing detailed mock data.</p>
     </a>
     
     <a href="./Youtube%20Videos/index.html" class="card">
-      <h2>YouTube Clone</h2>
-      <p>A YouTube video gallery clone UI.</p>
+      <h2>▶️ YouTube Clone</h2>
+      <p>A YouTube video gallery UI clone featuring dark mode and hover states.</p>
+    </a>
+
+    <a href="https://authentication-api-black.vercel.app/" class="card" target="_blank" rel="noopener noreferrer">
+      <h2>🔐 Auth API</h2>
+      <p>An external authentication API demonstration project. (New Tab)</p>
     </a>
   </div>
 </body>
